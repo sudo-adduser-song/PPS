@@ -10,7 +10,7 @@ int solution(vector<vector<int>> triangle) {
     vector<vector<int>> dp = triangle;
 
     for(int i = triangle.size()-1 ; i>0; i--){
-        for(int j = 0; j<triangle[i].size();j++){
+        for(int j = 0; j<triangle[i].size()-1;j++){
             dp[i-1][j]+= max(dp[i][j],dp[i][j+1]);
         }
     }
